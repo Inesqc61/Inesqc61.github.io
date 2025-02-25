@@ -9,9 +9,10 @@
                 background-color: #83c2ff;
             }
 
- a:hover {
-  background-color: gold;
+p:hover,  a:hover {
+  background-color: #a0ee75;
 }
+
 
 
         </style>
@@ -25,42 +26,37 @@
             class. El atributo class está definido como una lista de elementos separados por espacio, y uno de esos
             elementos debe coincidir exactamente con el nombre de clase dado en el selector.
         </p>
-        <ejemploclass class="classy">Ejemplo selector clase<ejemploclass>
+        <ejemploclass class="classy">Ejemplo selector clase</ejemploclass>
      
 
         <h2>Selector de Identificador (id="")</h2>
-        <p id="identificador-ejemplo">
-            Este párrafo tiene un identificador único que cambia su color a naranja y lo pone en cursiva. El selector de
-            identificador se usa para aplicar estilos a un elemento específico en la página.
+        <p>En un documento HTML, los selectores de ID de CSS buscan un elemento basado en el contenido del atributo ID. El atributo ID del elemento seleccionado debe coincidir exactamente con el valor dado en el selector.
         </p>
 
         <h2>Selector de Todos los elementos (*)</h2>
         <p>
-            Este selector aplica un estilo a todos los elementos de la página. En este caso, se ha cambiado la fuente a
-            Arial para todo el documento.
+         Selecciona todos los elementos. Opcionalmente, puede estar restringido a un espacio de nombre específico o a todos los espacios de nombres.
         </p>
 
         <h2>Selector de Varios elementos (p, em, h1, h2)</h2>
         <p>
             Este selector aplica estilos a múltiples elementos a la vez. Aquí se ha aplicado un margen de 10px arriba y
-            abajo a los elementos <code>&lt;p&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;h1&gt;</code> y
-            <code>&lt;h2&gt;</code>.
+            abajo a los elementos
         </p>
 
         <h2>Selector de Elementos contenidos en otros elementos (ol li)</h2>
         <ol>
             <li>Este es un elemento de lista dentro de una lista ordenada.</li>
             <li>
-                El selector <code>ol li</code> aplica un color azul a todos los elementos <code>&lt;li&gt;</code> dentro
-                de un <code>&lt;ol&gt;</code>.
+                El selector <code>ol li</code> aplica un color azul a todos los elementos li dentro
+                de un ol.
             </li>
         </ol>
 
         <h2>Selector de Sobrevuelo (p:hover)</h2>
         <p>
-            La pseudo-clase :hover de CSS coincide cuando el usuario interactúa con un elemento con un dispositivo señalador, pero no necesariamente lo activa. Generalmente se activa cuando el usuario se desplaza sobre un elemento con el cursor (puntero del mouse).
+            La pseudo-clase :hover de CSS coincide cuando el usuario interactúa con un elemento con un dispositivo señalador, pero no necesariamente lo activa. Generalmente se activa cuando el usuario se desplaza sobre un elemento con el cursor (puntero del mouse).<br>
+           <em>Si pasas el raton sobre los parrafos se ponen en verde</em> </p>
             
-        </p>
-            <a href="Selector de sobrevuelo">Ejemplo</a>
     </body>
 </html>
