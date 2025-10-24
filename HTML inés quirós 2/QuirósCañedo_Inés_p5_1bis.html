@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" /> 
+    <title>quiros_ines_p5_1bis</title> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Iniciales con colores aleatorios</h1>
+
+    <script>
+      function setup() {
+        // Crear lienzo
+        createCanvas(800, 800);
+
+        // Fondo verde claro (RGB de lightgreen)
+        background(144, 238, 144);
+
+        // Grosor del trazo
+        strokeWeight(4);
+
+        // --- Letra I ---
+        stroke(random(255), random(255), random(255));
+        line(150, 400, 150, 600); // Línea vertical
+
+        // --- Letra Q ---
+        stroke(random(255), random(255), random(255));
+        noFill();
+        ellipse(400, 500, 150, 150); // Círculo grande
+        line(460, 560, 490, 590);   // Rabito inferior de la Q
+
+        // --- Letra C ---
+        stroke(random(255), random(255), random(255));
+        noFill();
+        arc(650, 500, 150, 150, HALF_PI / 2, PI + QUARTER_PI); // Arco abierto de la C
+      }
+    </script>
+  </body>
+</html>
