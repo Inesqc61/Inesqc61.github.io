@@ -1,105 +1,74 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-  
-    <title>Cara</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script> <!-- Importando la librería p5.js -->
-</head>
-<body>
-    <h1>Cara</h1>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>perez_maria_p5_3bis</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.js"></script>
+  </head>
+  <body>
     <script>
-         function setup() {
-  createCanvas(800, 800);
-  background(173, 216, 230);
+      function setup() {
+        createCanvas(800, 500);
+        background(135, 206, 235); // Cielo azul
+      }
 
-  
-fill(255, 215, 0);
-              stroke(0);
-  strokeWeight();
-       circle(0,0,300);
+      function draw() {
+        noStroke();
+
       
+        fill(60, 179, 113);
+        rect(0, 400, width, 100);
 
-  stroke(255, 0, 0);
-noFill();
-  arc(200, 230, 120, 80, 0, PI);
-  stroke(101, 67, 33);
- 
-
-            
      
+        fill(255, 228, 181);
+        rect(250, 250, 200, 150);
+        fill(139, 69, 19);
+        triangle(230, 250, 470, 250, 350, 150); 
 
-           
-            fill(180, 150, 100);     
-            rect(100, 300, 300, 200);
-
-           
-            fill(150, 50, 50);      
-            triangle(75, 300, 425, 300, 300, 200); 
-
-       
-            fill(139, 69, 19);       
-            rect(235, 425, 50, 75); 
-    
-            stroke(101, 67, 33);  
-            strokeWeight(5);         
-            noFill();             
-           rect(235, 425, 50, 75); 
-
-           
-       
-         
-
-            fill(193, 216, 230);   
-            stroke(100, 67, 33);   
-            strokeWeight(5);        
-            rect(260, 350, 100, 40);  
-
-       
-            fill(193, 216, 230);     
-            stroke(100, 67, 33);   
-            strokeWeight(5);        
-            rect(140, 350, 100, 40);  
-                circle(290,260,60);
-             fill(193, 216, 230);
-                   
-               circle(290,260,30)
-              fill(290, 235, 215);     
-            stroke(222, 184, 135);   
-            strokeWeight(5);  
-            
-              ellipse(250, 800, 990, 600);
-            
-  stroke(40);
-  strokeWeight(2);
-   
-fill(150)
-  ellipse(190,600, 300, 100);
-             fill(50)  
-             circle(290,650, 80);
-  circle(80, 650, 80); 
-             fill(150, 50, 50);      
-             
-
- 
- fill(228,8,10)
-fill(228,8,10)
-              arc(550, 500, 360, 290, PI,TWO_PI);
-              fill(225,222,89)
-             arc(550, 500, 340, 270, PI,TWO_PI);
-                fill(125, 218, 88)
-             arc(550, 500, 300,250, PI,TWO_PI);
-                fill(6, 2, 112)
-             arc(550, 500,290, 230, PI,TWO_PI);
-                fill(204, 108, 231)
-             arc(550, 500,280, 209, PI,TWO_PI);
-  
-            
- 
-  
+     
+        fill(139, 69, 19);
+        rect(330, 330, 40, 70);
 
       
-        }
+        fill(173, 216, 230);
+        rect(270, 280, 40, 40);
+        rect(390, 280, 40, 40);
+
+     
+        fill(255, 223, 0);
+        ellipse(100, 100, 80, 80);
+
+
+        noFill();
+        strokeWeight(15);
+        stroke(255, 0, 0);
+        arc(400, 400, 600, 600, PI, TWO_PI);
+        stroke(255, 165, 0);
+        arc(400, 400, 580, 580, PI, TWO_PI);
+        stroke(255, 255, 0);
+        arc(400, 400, 560, 560, PI, TWO_PI);
+        stroke(0, 128, 0);
+        arc(400, 400, 540, 540, PI, TWO_PI);
+        stroke(0, 0, 255);
+        arc(400, 400, 520, 520, PI, TWO_PI);
+        stroke(75, 0, 130);
+        arc(400, 400, 500, 500, PI, TWO_PI);
+
+        strokeWeight(1);
+        stroke(0);
+        fill(200, 0, 0);
+        rect(550, 350, 120, 40); 
+        rect(580, 320, 60, 40);  
+        fill(0);
+        ellipse(570, 395, 30, 30); 
+        ellipse(650, 395, 30, 30);
+
+
+        fill(139, 69, 19);
+        rect(150, 320, 20, 80);
+        fill(34, 139, 34);
+        ellipse(160, 300, 80, 80);
+      }
     </script>
-</body>
+  </body>
 </html>
