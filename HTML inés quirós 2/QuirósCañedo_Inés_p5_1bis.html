@@ -11,30 +11,28 @@
 
     <script>
       function setup() {
-        // Crear lienzo
+   
         createCanvas(800, 800);
 
-        // Fondo verde claro (RGB de lightgreen)
         background(144, 238, 144);
 
-        // Grosor del trazo
+      
         strokeWeight(4);
 
-        // --- Letra I ---
+       
         stroke(random(255), random(255), random(255));
-        line(150, 400, 150, 600); // Línea vertical
+        line(150, 400, 150, 600); 
 
-        // --- Letra Q ---
         stroke(random(255), random(255), random(255));
         noFill();
-        ellipse(400, 500, 150, 150); // Círculo grande
-        line(460, 560, 490, 590);   // Rabito inferior de la Q
+        ellipse(400, 500, 150, 150);
+        line(460, 560, 490, 590);  
 
-        // --- Letra C ---
         stroke(random(255), random(255), random(255));
         noFill();
-        arc(650, 500, 150, 150, HALF_PI / 2, PI + QUARTER_PI); // Arco abierto de la C
+        arc(650, 500, 150, 150, HALF_PI / 2, PI + QUARTER_PI);
       }
     </script>
   </body>
 </html>
+
