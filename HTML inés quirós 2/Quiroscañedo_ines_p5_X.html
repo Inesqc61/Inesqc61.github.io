@@ -21,15 +21,15 @@
 
                 v = width / 500; 
             //sol//
-                 d = min(width, height) * 0.15; 
-    r = d / 2;
+                 d_s= min(width, height) * 0.15; 
+    r_s = d / 2;
 
 
-    x = -r;
-    y = height * 0.35;  
+    x_s = -r;
+    y_s = height * 0.35;  
 
 
-    v = width / 400;     
+    v_s= width / 10;     
   }
 
             
@@ -52,9 +52,20 @@
                 fill(173, 216, 230);
                 rect(270, 280, 40, 40);
                 rect(390, 280, 40, 40);
+				  
+   
 
-                fill(400, 223, 0);
-                ellipse(100, 100, 80, 80);
+  
+    fill(255, 210, 0);
+    circle(x, y, d);
+
+ 
+    x = x + v;
+
+    
+
+
+          
 
                 noFill();
                 strokeWeight(15);
