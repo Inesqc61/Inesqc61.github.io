@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>quiros_ines_p5_3bis</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.js"></script>
+    </head>
+    <body>
+        <script>
+            let x, y, v, d, r;
+            function setup() {
+                createCanvas(800, 500);
+          
+  //coche//
+  
+                d = min(width, height) * 0.12;
+                r = d / 2;
+
+                x = -r;
+                y = height * 0.75;
+
+                v = width / 500; 
+            //sol//
+
+            }
+
+            function draw() {     
+            background(135, 206, 235);
+                noStroke();
+
+                fill(60, 179, 113);
+                rect(0, 400, width, 100);
+
+                fill(255, 228, 181);
+                rect(250, 250, 200, 150);
+                fill(139, 69, 19);
+                triangle(230, 250, 470, 250, 350, 150);
+
+                fill(139, 69, 19);
+                rect(330, 330, 40, 70);
+
+                fill(173, 216, 230);
+                rect(270, 280, 40, 40);
+                rect(390, 280, 40, 40);
+
+                fill(400, 223, 0);
+                ellipse(100, 100, 80, 80);
+
+                noFill();
+                strokeWeight(15);
+                stroke(255, 0, 0);
+                arc(400, 400, 600, 600, PI, TWO_PI);
+                stroke(255, 165, 0);
+                arc(400, 400, 580, 580, PI, TWO_PI);
+                stroke(255, 255, 0);
+                arc(400, 400, 560, 560, PI, TWO_PI);
+                stroke(0, 128, 0);
+                arc(400, 400, 540, 540, PI, TWO_PI);
+                stroke(0, 0, 255);
+                arc(400, 400, 520, 520, PI, TWO_PI);
+                stroke(75, 0, 130);
+                arc(400, 400, 500, 500, PI, TWO_PI);
+  
+                
+                
+                
+                strokeWeight(1);
+                stroke(90);
+                fill(200, 0, 0);
+                fill(70, 290, 120);
+               
+                rect(x - d, y - d * 0.4, d * 2, d * 0.8, d * 0.1); // carrocería
+                fill(40);
+                circle(x - d * 0.6, y + d * 0.45, d * 0.5);
+                circle(x + d * 0.6, y + d * 0.45, d * 0.5);
+
+               
+                x = x + v; 
+
+                fill(139, 69, 19);
+                rect(150, 320, 20, 80);
+                fill(34, 139, 34);
+                ellipse(160, 300, 80, 80);
+                
+           
+        
+
+
+
+  }
+            
+        </script>
+    </body>
+</html>
