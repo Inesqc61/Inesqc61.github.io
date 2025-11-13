@@ -22,15 +22,15 @@
 
                 v = width / 500; 
             //sol//
-                 d_s= min(width, height) * 0.15; 
+                 d_s= max (width, height) * 0.15; 
     r_s = d / 2;
 
 
-    x_s = -r;
-    y_s = height * 0.35;  
+    x_s = r;
+    y_s = height * 0.15;  
 
 
-    v_s= width / 10;     
+    v_s= width / 1000;     
   }
 
             
@@ -55,13 +55,13 @@
                 rect(390, 280, 40, 40);
 				  
    
-
+//sol// 
   
     fill(255, 210, 0);
-    circle(x, y, d);
+    circle(x_s, y_s, d_s);
 
  
-    x = x + v;
+    x_s = x_s + v_s;
 
     
 
@@ -97,7 +97,7 @@
                 circle(x + d * 0.6, y + d * 0.45, d * 0.5);
 
                
-                x = x + v; 
+                x =x + v; 
 
                 fill(139, 69, 19);
                 rect(150, 320, 20, 80);
@@ -113,4 +113,3 @@
         </script>
     </body>
 </html>
-
