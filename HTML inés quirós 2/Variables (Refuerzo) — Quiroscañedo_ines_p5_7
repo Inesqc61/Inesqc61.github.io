@@ -1,1 +1,124 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>T7 · v3 — Sol + Luna + Cielos adelantados</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    </head>
+    <body>
+        <script>
+            // Sol y su cielo
+            let x_s, y_s, v_s, d_s, r_s;
+            let x_cs; // x del rectángulo "cielo del sol"
+            let adelanto_s; // cuánto va por delante el cielo del sol
+
+            // Luna y su cielo
+            let x_l, y_l, v_l, d_l, r_l;
+            let x_cl; // x del rectángulo "cielo de la luna"
+            let adelanto_l; // cuánto va por delante el cielo de la luna
+            let x, y, v, d, r; //coche
+            // Globo
+            let xG, yG, vyG, Sg, cuerda;
+
+            function setup() {
+                createCanvas(600, 600);
+
+                // Tamaños relativos (diámetros)
+                d_s = width * 0.15;
+                r_s = d_s * 0.5;
+                d_l = height * 0.3;
+                r_l = d_l * 0.4;
+
+                // Posiciones iniciales de astros
+                x_s = -r_s;
+                y_s = height * 0.25;
+                x_l = -width - r_s;
+                y_l = height * 0.25;
+
+                // Velocidades
+                v_s = width / 800;
+                v_l = v_s;
+
+                // Adelantos (por delante del astro)
+                adelanto_s = width * 0.1; 
+                adelanto_l = width * 0.1;
+
+                // Posiciones iniciales de los cielos (ligeramente por delante)
+                x_cs = x_s + adelanto_s;
+                x_cl = x_l + adelanto_l;
+                //coche//
+
+                d = min(width, height) * 0.12;
+                r = d / 2;
+
+                x = -r;
+                y = height * 0.75;
+
+                v = width / 500;
+                // Globo
+                xG = width * 0.5;
+                yG = height * 0.75;
+                vyG = 0.3;
+                Sg = 0.08 * height;
+                cuerda = 1.2 * Sg;
+            }
+
+            function draw() {
+                // Fondo base
+                background(20, 20, 30);
+                noStroke();
+
+                // Cielo del sol (azulado) — se pinta primero
+                fill(0, 0, 200);
+                rect(x_cs, 0, width, height * 0.8);
+
+                // Cielo de la luna (gris)
+                fill(200);
+                rect(x_cl, 0, width, height * 0.8);
+
+                // Suelo
+                fill(20, 120, 40);
+                rect(0, height * 0.8, width, height * 0.2);
+
+                // Sol
+                fill(255, 210, 0);
+                circle(x_s, y_s, d_s);
+
+                // Luna
+                fill(255);
+                circle(x_l, y_l, d_l);
+
+                // Movimiento de astros y de sus cielos (cada uno con su estado)
+                x_s = x_s + v_s;
+                x_cs = x_cs + v_s; // el cielo del sol se desplaza con el sol
+
+                x_l = x_l + v_l;
+                x_cl = x_cl + v_l; // el cielo de la luna se desplaza con la luna
+
+                // coche   //
+
+                strokeWeight(1);
+                stroke(90);
+                fill(200, 0, 0);
+                fill(70, 290, 120);
+
+                rect(x - d, y - d * 0.4, d * 2, d * 0.8, d * 0.1);
+                fill(40);
+                circle(x - d * 0.6, y + d * 0.45, d * 0.5);
+                circle(x + d * 0.6, y + d * 0.45, d * 0.5);
+
+                x = x + v;
+                //globo
+                yG = yG - vyG;
+                fill(255, 80, 80);
+                circle(xG, yG, Sg);
+
+                stroke(60);
+                line(xG, yG + 0.5 * Sg, xG, yG + 0.5 * Sg + cuerda);
+              
+            }
+        </script>
+    </body>
+</html>
 
