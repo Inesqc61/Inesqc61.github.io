@@ -20,6 +20,9 @@
             let x, y, v, d, r; //coche
             // Globo
             let xG, yG, vyG, Sg, cuerda;
+			//tronco
+			let S,troncoW,troncoH,copaD
+			
 
             function setup() {
                 createCanvas(600, 600);
@@ -62,9 +65,15 @@
                 vyG = 0.3;
                 Sg = 0.08 * height;
                 cuerda = 1.2 * Sg;
-            }
+				//arbol
+				S=0.10*height;
+troncoW=0.3*S;
+troncoH=1.2*S;
+copaD=1.1*S;
+				}
 
             function draw() {
+			
                 // Fondo base
                 background(20, 20, 30);
                 noStroke();
@@ -80,7 +89,10 @@
                 // Suelo
                 fill(20, 120, 40);
                 rect(0, height * 0.8, width, height * 0.2);
-
+			
+				
+       
+				  
                 // Sol
                 fill(255, 210, 0);
                 circle(x_s, y_s, d_s);
@@ -110,15 +122,43 @@
 
                 x = x + v;
                 //globo
-                yG = yG - vyG;
+                yG = yG - vyG;    
+                xG=xG-vyG;				
                 fill(255, 80, 80);
                 circle(xG, yG, Sg);
-
+      
                 stroke(60);
                 line(xG, yG + 0.5 * Sg, xG, yG + 0.5 * Sg + cuerda);
+					//aarcoiris
+				noFill();
+                strokeWeight(15);
+                stroke(255, 0, 0);
+                arc(300, 500, 600, 600, PI, TWO_PI);
+                stroke(255, 165, 0);
+                arc(300, 500, 580, 580, PI, TWO_PI);
+                stroke(255, 255, 0);
+                arc(300, 500, 560, 560, PI, TWO_PI);
+                stroke(0, 128, 0);
+                arc(300, 500, 540, 540, PI, TWO_PI);
+                stroke(0, 0, 200);
+                arc(300, 500, 520, 520, PI, TWO_PI);
+                stroke(75, 0, 130);
+                arc(300, 500, 500, 500, PI, TWO_PI);
+				 // arbol 
+			
+				 fill(100, 40, 20);
+				 rect(100 , 300- troncoH,troncoW, troncoH);
+			
+				fill(20, 100, 30); 
+				circle(100+troncoW/2, 300 - troncoH -  copaD/3, copaD);
+											  S = 0.3;
+  troncoW = 0.3*S; 
+   troncoH = 1.2*S;
+   copaD = 1.1*S;
+	
+				
               
             }
         </script>
     </body>
 </html>
-
