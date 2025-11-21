@@ -20,8 +20,10 @@
             let x, y, v, d, r; //coche
             // Globo
             let xG, yG, vyG, Sg, cuerda;
-			//tronco
-			let S,troncoW,troncoH,copaD
+		
+			
+      // Árbol
+      let S, troncoW, troncoH, copaD;
 			
 
             function setup() {
@@ -65,11 +67,12 @@
                 vyG = 0.3;
                 Sg = 0.08 * height;
                 cuerda = 1.2 * Sg;
-				//arbol
-				S=0.10*height;
-troncoW=0.3*S;
-troncoH=1.2*S;
-copaD=1.1*S;
+			
+		    // Árbol
+        S = 0.1 * height;
+        troncoW = 0.3 * S;
+        troncoH = 1.2 * S;
+        copaD = 1.1 * S;  
 				}
 
             function draw() {
@@ -107,28 +110,6 @@ copaD=1.1*S;
 
                 x_l = x_l + v_l;
                 x_cl = x_cl + v_l; // el cielo de la luna se desplaza con la luna
-
-                // coche   //
-
-                strokeWeight(1);
-                stroke(90);
-                fill(200, 0, 0);
-                fill(70, 290, 120);
-
-                rect(x - d, y - d * 0.4, d * 2, d * 0.8, d * 0.1);
-                fill(40);
-                circle(x - d * 0.6, y + d * 0.45, d * 0.5);
-                circle(x + d * 0.6, y + d * 0.45, d * 0.5);
-
-                x = x + v;
-                //globo
-                yG = yG - vyG;    
-                xG=xG-vyG;				
-                fill(255, 80, 80);
-                circle(xG, yG, Sg);
-      
-                stroke(60);
-                line(xG, yG + 0.5 * Sg, xG, yG + 0.5 * Sg + cuerda);
 					//aarcoiris
 				noFill();
                 strokeWeight(15);
@@ -144,20 +125,38 @@ copaD=1.1*S;
                 arc(300, 500, 520, 520, PI, TWO_PI);
                 stroke(75, 0, 130);
                 arc(300, 500, 500, 500, PI, TWO_PI);
-				 // arbol 
-			
-				 fill(100, 40, 20);
-				 rect(100 , 300- troncoH,troncoW, troncoH);
-			
-				fill(20, 100, 30); 
-				circle(100+troncoW/2, 300 - troncoH -  copaD/3, copaD);
-											  S = 0.3;
-  troncoW = 0.3*S; 
-   troncoH = 1.2*S;
-   copaD = 1.1*S;
-	
-				
-              
+				       
+
+                // coche   //
+
+                strokeWeight(1);
+                stroke(90);
+                fill(200, 0, 0);
+                fill(70, 290, 120);
+
+                rect(x - d, y - d * 0.4, d * 2, d * 0.8, d * 0.1);
+                fill(40);
+                circle(x - d * 0.6, y + d * 0.45, d * 0.5);
+                circle(x + d * 0.6, y + d * 0.45, d * 0.5);
+
+                x = x + v;
+				 // Árbol
+        noStroke();
+        fill(120, 80, 40);
+        rect(0.15 * width - 0.5 * troncoW, 0.8 * height - troncoH, troncoW, troncoH);
+        fill(40, 140, 60);
+        circle(0.15 * width, 0.8 * height - troncoH - 0.3 * S, copaD);
+                //globo
+                yG = yG - vyG;    
+                xG=xG-vyG;				
+                fill(255, 80, 80);
+                circle(xG, yG, Sg);
+      
+                stroke(60);
+                line(xG, yG + 0.5 * Sg, xG, yG + 0.5 * Sg + cuerda);
+
+				 
+  
             }
         </script>
     </body>
