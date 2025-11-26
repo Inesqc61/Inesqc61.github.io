@@ -161,6 +161,10 @@ rect(390, height * 0.8 - 120, 40, 40);
         rect(0.15 * width - 0.5 * troncoW, 0.8 * height - troncoH, troncoW, troncoH);
         fill(40, 140, 60);
         circle(0.15 * width, 0.8 * height - troncoH - 0.3 * S, copaD);
+		copaD=copaD+0.3;
+		troncoH=troncoH+0.3;
+		troncoW=troncoW+0.1;	
+		
                 //globo
                 yG = yG - vyG;    
                 xG=xG-vyG;				
@@ -169,7 +173,7 @@ rect(390, height * 0.8 - 120, 40, 40);
       
                 stroke(60);
                 line(xG, yG + 0.5 * Sg, xG, yG + 0.5 * Sg + cuerda);
-
+		
 				 
   
             }
