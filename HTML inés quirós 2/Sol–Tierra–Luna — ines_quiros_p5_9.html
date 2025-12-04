@@ -51,7 +51,7 @@ jupiter_R=5*R1;
 saturno_R=6*R1;
 urano_R=7*R1;
 neptuno_R=8*R1;
-luna_R=tierra_R+1.5*R1;
+luna_R=tierra_R/2;
 
 
 //diametro planetas
@@ -125,8 +125,8 @@ yu=centerY+urano_R*sin(urano_theta);
 xn=centerX+neptuno_R*cos(neptuno_theta);
 yn=centerY+neptuno_R*sin(neptuno_theta);
 //luna alrededor tierra
-xluna=xt+luna_R*cos(luna_theta);
-yluna=yt+luna_R*sin(luna_theta);
+xluna=xt+(tierra_R/2)*cos(luna_theta);
+yluna=yt+(tierra_R/2)*sin(luna_theta);
   
 
 //sol
@@ -149,7 +149,7 @@ ellipse(centerX, centerY, 2 * jupiter_R, 2 * jupiter_R);
 ellipse(centerX, centerY, 2 * saturno_R, 2 * saturno_R); 
 ellipse(centerX, centerY, 2 * urano_R, 2 * urano_R); 
 ellipse(centerX, centerY, 2 * neptuno_R, 2 * neptuno_R); 
-ellipse(xt, yt, 2*luna_R, 2*luna_R); 
+ellipse(xt, yt,tierra_R,tierra_R); 
 //mercurio
 fill(204, 154, 49);
 circle(xm,ym,mercurio_D);
