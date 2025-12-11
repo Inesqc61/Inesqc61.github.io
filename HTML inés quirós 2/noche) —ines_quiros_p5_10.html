@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>quiros_ines_p5_3bis</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.js"></script>
+    </head>
+    <body>
+        <script>
+            
+		let x_s, y_s, v_s, d_s, r_s;
+        function setup() {
+        createCanvas(500, 500);
+          
+ 
+     	  //  sol
+        d_s =50;
+        x_s = -d_s;
+        y_s = height * 0.20;
+        v_s = width/400;
+  }
+
+            
+
+        function draw() {     
+       background(135, 206, 235);
+       noStroke();
+       //suelo
+       fill(60, 179, 113);
+       rect(0, 400, width, 100);
+
+        
+   
+       //sol
+       fill(255, 255, 0);
+       stroke(255, 255, 0);
+       circle(x_s, y_s, d_s);
+
+       // Movimiento del sol
+       x_s =x_s + v_s;
+
+    // repetir sol
+    if (x_s > width + d_s) {
+        x_s= -d_s;
+    }
+    
+        
+           
+           
+   
+
+
+  }
+            
+        </script>
+    </body>
+</html>
