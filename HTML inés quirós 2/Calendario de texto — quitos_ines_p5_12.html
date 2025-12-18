@@ -1,4 +1,5 @@
 
+
 <!doctype html>
 <html>
     <head>
@@ -35,63 +36,57 @@ mes = 1;
 anio = 2025;
         }
 
-        function draw() {
+       function draw() {
 
-            if (xS <= width + rS) {
-            // Día 
-                background(130, 206, 230); //azul
-            } else {
-            // Noche 
-                background(10); //negro
-            }
-
-            //prao
-            noStroke();
-            fill(20, 120, 40);
-            rect(0, 0.8 * height, width, 0.2 * height);
-
-            //Sol 
-            noStroke()
-            fill(255, 210, 0);
-            circle(xS, yS, dS);
-			//luna
-			noStroke();
-			fill(200); 
-			circle(xL, yL, dL); 
-    //movimiento
-            xS = xS + vS;
-			 xL = xL + vL;
-
-            // Reinicio 
-            if (xS >= 2 * width - rS) {
-                xS = -rS;  // por la izquierda
-				 xL = -width - rL; // la Luna vuelve a esperar fuera a la izquierda
-				 }
-				 noStroke();
-
-// dependiente posición del sol.
-if (xS <= width + rS) { fill(0);   // día 
-} else { fill(255); // noche
-} 
-
-
-textSize(20);
-
- 
-text("Fecha: (" + dia + ") (" + mes + ") (" + anio + ")", 10, 20);
-           
-    if (xS > 2*width + rS) {
-//calendario
-   
-      dia = dia + 1; 
-
-      if (dia > 30) { dia = 1;    mes = mes + 1;   }
-      
-      if (mes > 12) { mes = 1;    anio = anio + 1; }
+    // Día / noche
+    if (xS <= width + rS) {
+        background(130, 206, 230); // día
+    } else {
+        background(10); // noche
     }
+
+    // Prado
+    noStroke();
+    fill(20, 120, 40);
+    rect(0, 0.8 * height, width, 0.2 * height);
+
+    // Sol
+    fill(255, 210, 0);
+    circle(xS, yS, dS);
+
+    // Luna
+    fill(200);
+    circle(xL, yL, dL);
+
+    // Movimiento
+    xS += vS;
+    xL += vL;
+
+    // Reinicio + calendario
+    if (xS >= 2 * width - rS) {
+        xS = -rS;
+        xL = -width - rL;
+
+        // 👉 CAMBIO DE FECHA
+        dia++;
+
+        if (dia > 30) {
+            dia = 1;
+            mes=mes+1;
         }
 
+        if (mes > 12) {
+            mes = 1;
+            anio= anio+1;
+        }
+    }
+
+    // Mostrar fecha
+    textSize(20);
+    fill(100);
+    text("Fecha: (" + dia + ") (" + mes + ") (" + anio + ")", 10, 20);
+}
         </script>
     </body>
-
 </html>
+
