@@ -49,6 +49,21 @@ vL = vS;
 dia = 1;
 mes = 1;
 anio = 2025;
+// Suelo (debe coincidir con el suelo que ya dibujas en T12)
+groundY = 0.80 * height;
+
+// Stickman: tamaño y posición inicial
+S  = 0.12 * min(width, height);
+xP = 0.25 * width;
+yP = groundY;                 // IMPORTANTE: aquí yP será la posición de los pies
+
+// Movimiento horizontal
+vP = width / 150;
+
+// Salto (valores sencillos)
+vY = 0;
+jumpV = -0.030 * height;      // impulso hacia arriba
+g = 0.0016 * height;          // aceleración hacia abajo (pequeña)
         }
 
        function draw() {
