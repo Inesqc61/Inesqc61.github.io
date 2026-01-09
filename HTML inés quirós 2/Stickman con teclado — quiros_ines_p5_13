@@ -1,1 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>T12-calendario</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    </head>
+    <body>
+        <script>
+
+      
+        let xS, yS, dS, rS, vS;//sol
+		let xL, yL, dL, rL, vL;//luna
+		let dia, mes, anio;//calendario
+
+        function setup() {
+            createCanvas(900, 500);
+			//sol
+            dS = 0.1 * width;    
+            rS = dS / 2;
+            yS = 0.2 * height;  
+            xS = -rS;            // por la izquierda
+            vS = width / 400;  
+//luna
+dL = dS * 0.5; 
+rL = dL / 2; 
+xL = -width - rL; // fuera a la izquierda 
+yL = height / 3; 
+vL = vS; 		
+//calendario
+dia = 1;
+mes = 1;
+anio = 2025;
+        }
+
+       function draw() {
+
+    // Día / noche
+    if (xS <= width + rS) {
+        background(130, 206, 230); // día
+    } else {
+        background(10); // noche
+    }
+
+    // Prado
+    noStroke();
+    fill(20, 120, 40);
+    rect(0, 0.8 * height, width, 0.2 * height);
+
+    // Sol
+    fill(255, 210, 0);
+    circle(xS, yS, dS);
+
+    // Luna
+    fill(200);
+    circle(xL, yL, dL);
+
+    // Movimiento
+    xS += vS;
+    xL += vL;
+
+    // Reinicio + calendario
+    if (xS >= 2 * width - rS) {
+        xS = -rS;
+        xL = -width - rL;
+
+        // 👉 CAMBIO DE FECHA
+        dia++;
+
+        if (dia > 30) {
+            dia = 1;
+            mes=mes+1;
+        }
+
+        if (mes > 12) {
+            mes = 1;
+            anio= anio+1;
+        }
+    }
+
+    // Mostrar fecha
+    textSize(20);
+    fill(100);
+    text("Fecha: (" + dia + ") (" + mes + ") (" + anio + ")", 10, 20);
+}
+        </script>
+    </body>
+</html>
 
