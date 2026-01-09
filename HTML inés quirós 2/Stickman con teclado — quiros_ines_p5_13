@@ -13,6 +13,23 @@
         let xS, yS, dS, rS, vS;//sol
 		let xL, yL, dL, rL, vL;//luna
 		let dia, mes, anio;//calendario
+ 
+        let xP, yP;        // posición del personaje
+        let S;             // tamaño base del stickman
+        let vP;            // velocidad horizontal (izq/der)
+        let groundY;       // altura del suelo (coincide con tu rectángulo de suelo en T12)             
+         let vY;            // velocidad vertical del salto
+        let jumpV;         // impulso del salto (valor negativo para subir)
+        let g;             // gravedad (valor positivo para bajar)
+        
+        let rHead //cabeza
+        let bodyL //cuerpo
+        let armL  //brazo
+        let legL  //pierna
+        
+        let hipY // cadera por encima de los pies
+        let shoulderY  // hombros por encima de la cadera
+        let headY // centro de la cabeza
 
         function setup() {
             createCanvas(900, 500);
