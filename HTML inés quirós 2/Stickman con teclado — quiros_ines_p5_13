@@ -115,6 +115,53 @@ g = 0.0016 * height;          // aceleración hacia abajo (pequeña)
     textSize(20);
     fill(100);
     text("Fecha: (" + dia + ") (" + mes + ") (" + anio + ")", 10, 20);
+ //Stickman
+            stroke(255, 43, 0);
+            strokeWeight(0.06 * S);
+            noFill(0);
+// Cabeza
+            circle(xP, headY, 2 * rHead);
+
+            // Tronco
+            line(xP, shoulderY, xP, hipY);
+
+            // Brazos (una línea horizontal + dos líneas hacia abajo)
+            line(xP - 0.25*S, shoulderY, xP + 0.25*S, shoulderY);
+            line(xP - 0.25*S, shoulderY, xP - 0.25*S, shoulderY + armL);
+            line(xP + 0.25*S, shoulderY, xP + 0.25*S, shoulderY + armL);
+
+            // Piernas
+            line(xP, hipY, xP - 0.18*S, yP);
+            line(xP, hipY, xP + 0.18*S, yP);
+            
+            if (keyIsDown(LEFT_ARROW)) {
+                xP = xP - vP;} 
+            else if (keyIsDown(RIGHT_ARROW)) {
+                xP = xP + vP;}
+            
+            if (xP < 0) {
+            xP = 0;}
+            if (xP > width) {
+            xP = width;}    
+            
+            // Física mínima del salto (se ejecuta siempre) 
+            vY = vY + g; // gravedad 
+            yP = yP + vY; // actualiza pies
+            // Si toca el suelo, corregimos 
+            if (yP > groundY) 
+            { yP = groundY; vY = 0; }
+            
+            //Recalcular cuerpo según yP
+            hipY = yP - legL;          
+            shoulderY = hipY - bodyL;  
+            headY = shoulderY - rHead; 
+        }
+
+        function keyPressed() {
+        if (keyCode === UP_ARROW) {// Solo saltamos si estamos en el suelo
+        if (yP === groundY) {
+        vY = jumpV;}
+        }
 }
         </script>
     </body>
