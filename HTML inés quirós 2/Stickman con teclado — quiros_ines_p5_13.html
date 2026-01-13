@@ -64,6 +64,14 @@ vP = width / 150;
 vY = 0;
 jumpV = -0.030 * height;      // impulso hacia arriba
 g = 0.0016 * height;          // aceleración hacia abajo (pequeña)
+ //Stickman
+            rHead = 0.20 * S;
+            bodyL = 0.60 * S;
+            armL  = 0.45 * S;
+            legL  = 0.55 * S;
+            hipY = yP - legL;          
+            shoulderY = hipY - bodyL;  
+            headY = shoulderY - rHead; 
         }
 
        function draw() {
