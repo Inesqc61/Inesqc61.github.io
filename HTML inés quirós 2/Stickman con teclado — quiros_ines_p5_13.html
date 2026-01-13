@@ -15,12 +15,12 @@
 		let dia, mes, anio;//calendario
  
         let xP, yP;        // posición del personaje
-        let S;             // tamaño base del stickman
-        let vP;            // velocidad horizontal (izq/der)
-        let groundY;       // altura del suelo (coincide con tu rectángulo de suelo en T12)             
-         let vY;            // velocidad vertical del salto
-        let jumpV;         // impulso del salto (valor negativo para subir)
-        let g;             // gravedad (valor positivo para bajar)
+        let S;             // tamaño stickman
+        let vP;            // velocidad 
+        let groundY;       // altura del suelo         
+         let vY;            // velocidad salto
+        let jumpV;         // impulso del salto 
+        let g;             // gravedad 
         
         let rHead //cabeza
         let bodyL //cuerpo
@@ -49,13 +49,13 @@ vL = vS;
 dia = 1;
 mes = 1;
 anio = 2025;
-// Suelo (debe coincidir con el suelo que ya dibujas en T12)
+// Suelo 
 groundY = 0.80 * height;
 
 // Stickman: tamaño y posición inicial
 S  = 0.12 * min(width, height);
 xP = 0.25 * width;
-yP = groundY;                 // IMPORTANTE: aquí yP será la posición de los pies
+yP = groundY;                 //  posición de los pies
 
 // Movimiento horizontal
 vP = width / 150;
@@ -97,7 +97,7 @@ g = 0.0016 * height;          // aceleración hacia abajo (pequeña)
         xS = -rS;
         xL = -width - rL;
 
-        // 👉 CAMBIO DE FECHA
+        //
         dia++;
 
         if (dia > 30) {
