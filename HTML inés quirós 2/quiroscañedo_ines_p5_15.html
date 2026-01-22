@@ -40,14 +40,14 @@ let xO, yO, wO, hO, vO;
             createCanvas(900, 500);
 			// Inicialización del disparo
     tD = 0.05 * width;  // Tamaño del disparo
-    vD = height / 25;   // Velocidad del disparo
+    vD = height / 60;   // Velocidad del disparo
     disparoActivo = false;
 
     // Inicialización del objetivo
     wO = 0.15 * width;  // Ancho del objetivo
     hO = 0.05 * height; // Alto del objetivo
     xO = random(width); // Posición inicial del objetivo
-    yO = 0.25 * height; // Posición vertical del objetivo
+    yO = 0.60 * height; // Posición vertical del objetivo
     vO = random(1, 3) * (random(1) > 0.5 ? 1 : -1); // Velocidad aleatoria de movimiento horizontal
 
   
@@ -133,7 +133,7 @@ g = 0.0016 * height;          // aceleración hacia abajo (pequeña)
     fill(100);
     text("Fecha: (" + dia + ") (" + mes + ") (" + anio + ")", 10, 20);
  
-     dibujarStickman();ç
+     dibujarStickman();
 	 
     // Movimiento del objetivo
     xO += vO;
@@ -147,27 +147,52 @@ g = 0.0016 * height;          // aceleración hacia abajo (pequeña)
     dibujarObjetivo();
 
     // Movimiento del disparo
-    if (disparoActivo) {
-        yD -= vD; // Movimiento hacia arriba
-        if (yD < 0) { // Si el disparo sale de la pantalla, lo desactivamos
-            disparoActivo = false;
-        }
-        dibujarDisparo();
-    }
+ if (disparoActivo) {
 
-    // Comprobación de impacto
-    if (disparoActivo && xD > xO && xD < xO + wO && yD > yO && yD < yO + hO) {
-        puntos += 1;
+    // 🔴 COMPROBAR IMPACTO PRIMERO
+    if (
+        xD + tD > xO &&
+        xD < xO + wO &&
+        yD + tD > yO &&
+        yD < yO + hO
+    ) {
+        puntos++;
         disparoActivo = false;
-        // Reaparecer objetivo
+
         xO = random(width);
+        yO = 0.60 * height;
         vO = random(1, 3) * (random(1) > 0.5 ? 1 : -1);
     }
+
+    // 🔵 LUEGO mover
+    yD -= vD;
+
+    if (yD < 0) disparoActivo = false;
+
+    dibujarDisparo();
+}
+    // Comprobación de impacto
+ if (
+    disparoActivo &&
+    xD + tD > xO &&
+    xD < xO + wO &&
+    yD + tD > yO &&
+    yD < yO + hO
+) {
+    puntos++;
+    disparoActivo = false;
+
+    // Reaparece el objetivo
+    xO = random(width);
+    yO = 0.60 * height;
+    vO = random(1, 3) * (random(1) > 0.5 ? 1 : -1);
+}
+
 
     // Mostrar puntos
     dibujarPuntos();
 }
-	 }
+	 
 function dibujarStickman() { //Stickman
             stroke(255, 43, 0);
             strokeWeight(0.06 * S);
@@ -220,7 +245,8 @@ function actualizarCalendario() {
     if (mes > 12) {
         mes = 1;
         anio = anio + 1;
-    }
+    }}
+	
 	function dibujarDisparo() {
     fill(255, 0, 0); // Color rojo
     noStroke();
@@ -235,22 +261,27 @@ function dibujarObjetivo() {
 }
 
 function dibujarPuntos() {
-    textSize(20);
-    fill(255);
-    text("Puntos: " + puntos, width - 120, 30);
+    fill(255, 0, 0);   // color visible
+    noStroke();
+    textSize(22);
+    text("Puntos: " + puntos, width - 150, 30);
 }
-}
-     function keyPressed() {
-	     if (keyCode === 32 && !disparoActivo) { // Barra espaciadora
+function keyPressed() {
+
+    // Disparo
+    if (keyCode === 32 && !disparoActivo) {
         disparoActivo = true;
-        xD = xP; // El disparo parte desde el stickman
-        yD = yP - rHead; // Alineado con la cabeza
-    
-        if (keyCode === UP_ARROW) {// Solo saltamos si estamos en el suelo
-        if (yP === groundY) {
-        vY = jumpV;}
-        }
+        xD = xP;
+        yD = yP - rHead;
+    }
+
+    // Salto
+    if (keyCode === UP_ARROW && yP === groundY) {
+        vY = jumpV;
+    }
 }
+
+
 
         </script>
     </body>
