@@ -9,11 +9,6 @@
 
 <body>
 <script>
-
-// ===================
-// VARIABLES GENERALES
-// ===================
-
 // Sol y luna
 let xS, yS, dS, rS, vS;
 let xL, yL, dL, rL, vL;
@@ -38,9 +33,6 @@ let disparoActivo;
 // Objetivo
 let xO, yO, wO, hO, vO;
 
-// ===================
-// SETUP
-// ===================
 function setup() {
     createCanvas(900, 500);
 
@@ -98,28 +90,25 @@ function setup() {
     headY = shoulderY - rHead;
 }
 
-// ===================
-// DRAW
-// ===================
 function draw() {
 
-    // 1. Día / noche
+    //Día / noche
     if (xS <= width + rS) {
         background(130, 206, 230);
     } else {
         background(10);
     }
 
-    // 2. Suelo
+    //Suelo
     noStroke();
     fill(20, 120, 40);
     rect(0, groundY, width, height - groundY);
 
-    // 3. Sol y luna
+    //Sol y luna
     dibujarSol();
     dibujarLuna();
 
-    // 4. Movimiento sol y luna + calendario
+    // Movimiento sol y luna + calendario
     xS += vS;
     xL += vL;
 
@@ -151,7 +140,7 @@ dibujarObjetivo();
 
 
 
-    // 6. Disparo
+    //Disparo
     if (disparoActivo) {
         yD -= vD;
 
@@ -162,16 +151,13 @@ dibujarObjetivo();
         dibujarDisparo();
     }
 
-    // 7. Stickman
+    // Stickman
     dibujarStickman();
 
-    // 8. Calendario
+    //Calendario
     dibujarCalendario();
 }
 
-// ===================
-// FUNCIONES DE DIBUJO
-// ===================
 function dibujarSol() {
     fill(255, 210, 0);
     noStroke();
@@ -234,9 +220,7 @@ function dibujarCalendario() {
     text("Fecha: " + dia + " / " + mes + " / " + anio, 10, 25);
 }
 
-// ===================
-// OTRAS FUNCIONES
-// ===================
+
 function actualizarCalendario() {
     dia++;
     if (dia > 30) {
@@ -266,3 +250,4 @@ function keyPressed() {
 </script>
 </body>
 </html>
+
