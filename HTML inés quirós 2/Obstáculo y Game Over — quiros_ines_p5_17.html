@@ -9,7 +9,7 @@
 
 <body>
 <script>
-// ================== VARIABLES ==================
+
 
 // Sol y luna
 let xS, yS, dS, rS, vS;
@@ -40,10 +40,10 @@ let puntos;
 // Obstáculo
 let xB, yB, wB, hB, vB;
 
-// Estado del juego
+//  juego dinosaurioio
 let gameOver;
 
-// ================== SETUP ==================
+
 function setup() {
     createCanvas(900, 500);
 
@@ -113,10 +113,10 @@ function setup() {
     gameOver = false;
 }
 
-// ================== DRAW ==================
+
 function draw() {
 
-    // Fondo día / noche
+    //día / noche
     if (xS <= width + rS) background(130, 206, 230);
     else background(10);
 
@@ -171,7 +171,7 @@ function draw() {
             vB = -random(2, 4);
         }
 
-        // Colisión stickman - obstáculo
+        // Colisión
         let pIzq = xP - 20;
         let pDer = xP + 20;
         let pArr = yP - 70;
@@ -192,7 +192,7 @@ function draw() {
         }
     }
 
-    // Dibujos
+
     dibujarObjetivo();
     if (disparoActivo) dibujarDisparo();
     dibujarObstaculo();
@@ -203,7 +203,7 @@ function draw() {
     if (gameOver) mostrarGameOver();
 }
 
-// ================== FUNCIONES ==================
+
 function dibujarSol() {
     fill(255, 210, 0);
     noStroke();
@@ -303,4 +303,5 @@ function keyPressed() {
 </script>
 </body>
 </html>
+
 
