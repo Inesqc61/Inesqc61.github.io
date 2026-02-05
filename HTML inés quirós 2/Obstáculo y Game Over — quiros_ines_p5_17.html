@@ -153,13 +153,25 @@ function draw() {
         if (disparoActivo) {
             yD -= vD;
 
-            if (
-                xD > xO && xD < xO + wO &&
-                yD > yO && yD < yO + hO
-            ) {
-                puntos++;
-                disparoActivo = false;
-            }
+         if (
+    xD > xO && xD < xO + wO &&
+    yD > yO && yD < yO + hO
+) {
+    puntos++;
+    disparoActivo = false;
+
+    // REINICIAR OBJETIVO
+    if (vO > 0) {
+        xO = width + wO;
+        vO = -random(1, 3);
+    } else {
+        xO = -wO;
+        vO = random(1, 3);
+    }
+
+    yO = random(0.2 * height, 0.35 * height);
+}
+
 
             if (yD < 0) disparoActivo = false;
         }
@@ -303,5 +315,6 @@ function keyPressed() {
 </script>
 </body>
 </html>
+
 
 
