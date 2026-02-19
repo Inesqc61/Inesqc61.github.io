@@ -41,7 +41,7 @@
 <p>Este código tiene como objetivo integrar la detección de objetos usando la cámara del móvil y el modelo COCO-SSD a través de la librería ml5.js. A continuación, explicamos cada bloque de código:</p>
 
 <p><strong>1. Configuración inicial:</strong><br>
-El script empieza cargando la librería <strong>ml5.js</strong> en su versión 0.12.2 para asegurar que no haya cambios de API durante la ejecución. También se incluyen algunos estilos básicos para organizar la interfaz visual de la página, asegurando que el video y el canvas se ajusten adecuadamente a la pantalla del dispositivo.</p>
+El script empieza cargando la librería ml5.js en su versión 0.12.2 para asegurar que no haya cambios de API durante la ejecución. También se incluyen algunos estilos básicos para organizar la interfaz visual de la página, asegurando que el video y el canvas se ajusten adecuadamente a la pantalla del dispositivo.</p>
 
 <p><strong>2. Iniciar cámara:</strong><br>
 En la función initCamera(), se solicita acceso a la cámara del dispositivo mediante navigator.mediaDevices.getUserMedia. Aquí, se especifica que se usará la cámara trasera del móvil con facingMode: { ideal: "environment" }. Al recibir la transmisión de video, se asigna el <code>srcObject</code> del video a la cámara y se espera que el video cargue completamente antes de proceder a ajustar las dimensiones del canvas.</p>
