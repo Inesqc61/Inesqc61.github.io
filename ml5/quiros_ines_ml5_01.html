@@ -34,9 +34,21 @@
   </div>
 
   <div>
-   <h3> Explicación de cómo funciona el código</h3>
 
-   <p>Este código convierte tu página web en una especie de "cámara inteligente" que, en tiempo real, detecta y muestra los objetos que está viendo, como si fuera un sistema de reconocimiento visual. Utiliza inteligencia artificial para identificar lo que ve la cámara y dibuja los resultados directamente en la pantalla. </p>
+
+   <h3>Explicación de cómo funciona el código</h3>
+
+<p>Este código tiene como objetivo integrar la detección de objetos usando la cámara del móvil y el modelo <strong>COCO-SSD</strong> a través de la librería <strong>ml5.js</strong>. A continuación, explicamos cada bloque de código:</p>
+
+<p><strong>1. Configuración inicial:</strong><br>
+El script empieza cargando la librería <strong>ml5.js</strong> en su versión 0.12.2 para asegurar que no haya cambios de API durante la ejecución. También se incluyen algunos estilos básicos para organizar la interfaz visual de la página, asegurando que el video y el canvas se ajusten adecuadamente a la pantalla del dispositivo.</p>
+
+<p><strong>2. Iniciar cámara:</strong><br>
+En la función <code>initCamera()</code>, se solicita acceso a la cámara del dispositivo mediante <code>navigator.mediaDevices.getUserMedia</code>. Aquí, se especifica que se usará la cámara trasera del móvil con <code>facingMode: { ideal: "environment" }</code>. Al recibir la transmisión de video, se asigna el <code>srcObject</code> del video a la cámara y se espera que el video cargue completamente antes de proceder a ajustar las dimensiones del canvas.</p>
+
+<p><strong>3. Configuración del detector de objetos:</strong><br>
+Al pulsar el botón "Iniciar cámara", se ejecuta la función btnStart.addEventListener(). Esta función inicia la cámara, carga el modelo de detección de objetos <stro
+
 
   </div>
 
