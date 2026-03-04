@@ -159,6 +159,52 @@
     function gotPoses(results) {
       poses = results;
     }
+   <ol>
+  <li><strong>Falla 1: Mala iluminación / contraluz</strong>
+    <ul>
+      <li><strong>Síntoma:</strong> Los puntos desaparecen o se colocan mal en zonas oscuras.</li>
+      <li><strong>Condiciones:</strong> Poca luz o contraluz.</li>
+      <li><strong>Posible causa:</strong> El modelo tiene dificultades para detectar puntos en entornos con poca luz.</li>
+      <li><strong>Comprobación:</strong> Realicé una prueba con poca luz y los puntos clave no se detectaron correctamente.</li>
+    </ul>
+  </li>
+  
+  <li><strong>Falla 2: Movimiento rápido (Jitter)</strong>
+    <ul>
+      <li><strong>Síntoma:</strong> Los puntos saltan cuando realizo movimientos rápidos.</li>
+      <li><strong>Condiciones:</strong> Movimiento rápido del cuerpo.</li>
+      <li><strong>Posible causa:</strong> La cámara no puede seguir el movimiento rápido debido a latencia o baja tasa de FPS.</li>
+      <li><strong>Comprobación:</strong> Al moverme rápidamente, los puntos clave se desajustaron.</li>
+    </ul>
+  </li>
+  
+  <li><strong>Falla 3: Distancia incorrecta</strong>
+    <ul>
+      <li><strong>Síntoma:</strong> Los puntos se colocan mal o no se detectan si estoy demasiado cerca o lejos.</li>
+      <li><strong>Condiciones:</strong> Estar demasiado cerca o demasiado lejos de la cámara.</li>
+      <li><strong>Posible causa:</strong> El modelo tiene un rango limitado para detectar puntos.</li>
+      <li><strong>Comprobación:</strong> Probé moverme más cerca y más lejos de la cámara, y la detección falló en ambas situaciones.</li>
+    </ul>
+  </li>
+  
+  <li><strong>Falla 4: Oclusión parcial del cuerpo</strong>
+    <ul>
+      <li><strong>Síntoma:</strong> Los puntos desaparecen si una parte del cuerpo está fuera del campo de visión.</li>
+      <li><strong>Condiciones:</strong> Cuando partes del cuerpo, como los brazos o piernas, están fuera del plano de la cámara.</li>
+      <li><strong>Posible causa:</strong> El modelo necesita ver todo el cuerpo para detectar los puntos correctamente.</li>
+      <li><strong>Comprobación:</strong> Al mover mis brazos fuera del plano de la cámara, los puntos correspondientes desaparecieron.</li>
+    </ul>
+  </li>
+  
+  <li><strong>Falla 5: Varias personas en la escena</strong>
+    <ul>
+      <li><strong>Síntoma:</strong> El modelo mezcla los puntos de varias personas o detecta a otras personas incorrectamente.</li>
+      <li><strong>Condiciones:</strong> Varias personas en el campo de visión.</li>
+      <li><strong>Posible causa:</strong> El modelo no está optimizado para detectar varias personas al mismo tiempo.</li>
+      <li><strong>Comprobación:</strong> Al tener a dos personas en el campo de visión, los puntos de ambas personas se mezclaron o el modelo detectó a una persona adicional que no estaba presente.</li>
+    </ul>
+  </li>
+</ol>
   </script>
 </body>
 </html>
